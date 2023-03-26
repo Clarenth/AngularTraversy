@@ -12,12 +12,14 @@ import { UiService } from 'src/app/services/ui.service';
   styleUrls: ['./header.component.scss']
 })
 
-export class HeaderComponent {
+export class HeaderComponent 
+{
   title: string = 'AngularTraversy';
   showAddTask!: boolean;
   subscription!: Subscription;
 
-  constructor(private uiService: UiService, private router: Router ) {
+  constructor(private uiService: UiService, private router: Router ) 
+  {
     this.subscription = this.uiService
     .onToggle()
     .subscribe((value) => (this.showAddTask = value));
@@ -25,11 +27,14 @@ export class HeaderComponent {
 
   ngOnInit(): void {}
 
-  toggleAddTask() {
+  toggleAddTask() 
+  {
     this.uiService.toggleAddTask();
   }
 
-  hasRoute(route: string) {
+  hasRoute(route: string) 
+  {
     return this.router.url === route;
   }
+
 }

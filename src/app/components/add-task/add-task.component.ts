@@ -13,7 +13,8 @@ import { UiService } from 'src/app/services/ui.service';
   templateUrl: './add-task.component.html',
   styleUrls: ['./add-task.component.scss']
 })
-export class AddTaskComponent {
+export class AddTaskComponent 
+{
   @Output() onAddTask: EventEmitter<Task> = new EventEmitter;
 
   text!: string;
@@ -24,17 +25,21 @@ export class AddTaskComponent {
 
   constructor(private uiService: UiService) {
     this.subscription = 
-    this.uiService.onToggle()
-    .subscribe((value) => (this.showAddTask = value))
+      this.uiService.onToggle()
+      .subscribe((value) => (this.showAddTask = value))
   }
 
-  onSubmit() {
+  ngOnInit(): void {}
+
+  onSubmit() 
+  {
     if(!this.text) {
       alert('A task must be filled in')
       return;
     }
 
-    const newTask = {
+    const newTask = 
+    {
       text: this.text,
       day: this.day,
       reminder: this.reminder,
@@ -45,7 +50,5 @@ export class AddTaskComponent {
     this.day = '';
     this.reminder = false;
   }
-
-  ngOnInit(): void {}
 
 }

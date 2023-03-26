@@ -4,19 +4,22 @@ import { Observable, Subject } from 'rxjs';
 @Injectable({
   providedIn: 'root'
 })
-export class UiService {
+export class UiService 
+{
 
   private showAddTask: boolean = false;
   private subject = new Subject<any>();
 
   constructor() { }
 
-  toggleAddTask(): void {
+  toggleAddTask(): void 
+  {
     this.showAddTask = !this.showAddTask;
     this.subject.next(this.showAddTask);
   }
 
-  onToggle(): Observable<any> {
+  onToggle(): Observable<any> 
+  {
     return this.subject.asObservable();
   }
 }
