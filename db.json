@@ -23,6 +23,18 @@
       "day": "June 14th at 10:00",
       "reminder": true,
       "id": 4
+    },
+    {
+      "text": "erd",
+      "day": "October 16 at 13:30pm",
+      "reminder": true,
+      "id": 5
+    },
+    {
+      "text": "Hello test from Tauri AppImage",
+      "day": "15:45pm, 09/10/2023",
+      "reminder": true,
+      "id": 6
     }
   ]
 }
